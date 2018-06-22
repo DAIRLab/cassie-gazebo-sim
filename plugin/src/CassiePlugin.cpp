@@ -69,7 +69,19 @@ CassiePlugin::CassiePlugin() :
     headerOutPtr_ = sendBuf_;
     dataOutPtr_ = &sendBuf_[PACKET_HEADER_LEN];
 
-    runSim_ = false;
+    //udp initialization
+    int err;
+
+    // Get address info
+    struct addrinfo *local;
+    struct addrinfo hints = {0};
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_DGRAM;
+    hints.ai_protocol = IPPROTO_UDP;
+    err = getaddrinfo("127.0.0.1", "25001", &hints, &local);
+    dispatch_addr_ = (struct sockaddr *) local->ai_addr;
+    
+    runSim_ = true;
 }
 
 
@@ -340,7 +352,7 @@ void CassiePlugin::onUpdate()
 
         // Send response
         send_packet(sock_, sendBuf_, SENDLEN,
-                    (struct sockaddr *) &srcAddr_, addrLen_);
+                    dispatch_addr_, addrLen_);
     }
 }
 

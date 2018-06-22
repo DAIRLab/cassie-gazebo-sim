@@ -113,6 +113,7 @@ class CassiePlugin : public gazebo::ModelPlugin {
     socklen_t addrLen_;
     gazebo::common::Time lastPacketTime_;
     gazebo::common::Time firstPacketTime_;
+    struct sockaddr * dispatch_addr_;
 
     // Sim flag
     bool runSim_;
