@@ -16,7 +16,7 @@ Developed and tested on Ubuntu 16.04 with Gazebo 9.
 * `export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:<WORKSPACE>/cassie-gazebo-sim/`
 * `export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:<WORKSPACE>/cassie-gazebo-sim/build`
 * `export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:<WORKSPACE>/cassie-gazebo-sim/build`
-* From the `cassie-gazebo-sim/cassie` directory, run `gazebo cassie.world`
+* From the `cassie-gazebo-sim/cassie` directory, run `gazebo cassie.world` to test if the installation is successful. 
 
 Note: The Gazebo plugin and model path needs to be updated to load the meshes and plugins - http://gazebosim.org/tutorials?tut=components
 
