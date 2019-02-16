@@ -11,7 +11,7 @@ Developed and tested on Ubuntu 16.04 with Gazebo 9.
 * Make a build directory
 * `cd build`
 * `cmake ../plugin`
-
+* `make`
 * `source /usr/share/gazebo/setup.sh` 
 * `export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:<WORKSPACE>/cassie-gazebo-sim/`
 * `export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:<WORKSPACE>/cassie-gazebo-sim/build`
