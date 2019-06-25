@@ -28,7 +28,7 @@
       <uri>model://ground_plane</uri>
     </include>
     <include>
-      <uri>model://cassie</uri>
+      <uri>model://cassie_fixed_base</uri>
     </include>
   </world>
 </sdf>
