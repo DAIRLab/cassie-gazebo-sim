@@ -1,13 +1,15 @@
 # agility-cassie-gazebo-simulator
 
 A simulation library for Agility Robotics' Cassie robot using Gazebo.
-Developed and tested on Ubuntu 16.04 with Gazebo 9.
+Developed and tested on Ubuntu 18.04 with Gazebo 9.9
 
+This has been modified from the original Agility Robotics library to be used alongside **dairlib**.
 ## Instructions:
 
 ### Building the code:
+* Download and build **dairlib** (https://github.com/DAIRLab/dairlib). NOTE: this is needed for the LCM types only.
 * Download and install Gazebo 9 - http://gazebosim.org/tutorials?tut=install_ubuntu
-* Clone this repository
+* Clone this repository into the same root directory as **dairlib**.
 * Make a build directory
 * `cd build`
 * `cmake ../plugin`

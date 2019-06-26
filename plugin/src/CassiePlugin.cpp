@@ -15,7 +15,7 @@
  */
 
 #include "CassiePlugin.hpp"
-
+#include "udp_lcm_translator.h"
 
 CassiePlugin::CassiePlugin() :
     kMotorBits_{13, 13, 13, 13, 18, 13, 13, 13, 13, 18},
@@ -353,6 +353,11 @@ void CassiePlugin::onUpdate()
         // Send response
         send_packet(sock_, sendBuf_, SENDLEN,
                     dispatch_addr_, addrLen_);
+
+        // Send LCM response
+        dairlib::lcmt_cassie_out message;
+        cassieOutToLcm(output, currentTime.Double(), &message);
+        lcm.publish("CASSIE_OUTPUT", &message);
     }
 }
 

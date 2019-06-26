@@ -24,6 +24,7 @@
 #include <gazebo/common/Plugin.hh>
 #include <gazebo/common/common.hh>
 #include <ignition/math.hh>
+#include <lcm/lcm-cpp.hpp>
 
 #include "cassie_core_sim.h"
 #include "udp.h"
@@ -114,6 +115,8 @@ class CassiePlugin : public gazebo::ModelPlugin {
     gazebo::common::Time lastPacketTime_;
     gazebo::common::Time firstPacketTime_;
     struct sockaddr * dispatch_addr_;
+
+    lcm::LCM lcm;
 
     // Sim flag
     bool runSim_;
