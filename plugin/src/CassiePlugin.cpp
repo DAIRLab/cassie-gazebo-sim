@@ -336,7 +336,7 @@ void CassiePlugin::onUpdate()
     }
 
     // Detatch pelvis 5 seconds after receiving data
-    if ((currentTime - firstPacketTime_).Double() > 5.0)
+    // if ((currentTime - firstPacketTime_).Double() > 5.0)
        // detachPelvis();
 
     if (runSim_) {
