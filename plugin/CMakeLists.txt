@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(gazebo REQUIRED)
 find_package(lcm REQUIRED)
@@ -11,6 +12,10 @@ include_directories(include)
 include_directories(../../dairlib/bazel-bin/lcmtypes)
 target_link_libraries(cassie_plugin ${GAZEBO_LIBRARIES} ${CMAKE_SOURCE_DIR}/libagilitycassie.a)
 target_link_libraries(cassie_plugin ${LCM_NAMESPACE}lcm)
+
+add_library(cassie_initialization SHARED src/CassieInitialization.cpp)
+include_directories(include)
+target_link_libraries(cassie_initialization ${GAZEBO_LIBRARIES})
 
 add_executable(cassiectrl example/cassiectrl.c)
 target_link_libraries(cassiectrl cassie_plugin)

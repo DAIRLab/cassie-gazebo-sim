@@ -1603,5 +1603,8 @@
     <plugin filename="libcassie_plugin.so" name="CassiePlugin">
     </plugin>
 
+    <plugin filename="libcassie_initialization.so" name="CassieInitialization">
+    </plugin>
+
 </model>
 </sdf>
